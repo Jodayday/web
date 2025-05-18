@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}문의·견적 – NetworkCo{% endblock %}
+{% block content %}
+  <h2 class="text-3xl font-semibold mb-4 text-indigo-600">문의·견적요청</h2>
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
+    <form method="post" action="#">
+      {% csrf_token %}
+      <label class="block mb-2">이름<input type="text" name="name" class="w-full border p-2 rounded"/></label>
+      <label class="block mb-2">이메일<input type="email" name="email" class="w-full border p-2 rounded"/></label>
+      <label class="block mb-4">문의내용<textarea name="message" class="w-full border p-2 rounded"></textarea></label>
+      <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded hover:bg-indigo-500">
+        보내기
+      </button>
+    </form>
+  </div>
+{% endblock %}
